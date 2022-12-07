@@ -1,0 +1,55 @@
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* Our main grid container, holds our 3 main elements */
+.main-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+}
+
+/* Holds our header and main article */
+.right {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 4fr;
+}
+
+/* Main article showing cards */
+.article {
+  display: grid;
+  grid-template-columns: 3fr minmax(225px, 1fr);
+  grid-template-rows: 50px 1fr;
+}
+
+/* Side bar in main, announcments etc */
+.sidebar {
+  background-color: aquamarine;
+}
+
+/* This is our flex container for cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: aliceblue;
+  grid-column: 1/2;
+}
+
+/* Our main article */
+.card {
+  height: 150px;
+  width: 320px;
+}
+
+h4 {
+  margin: 10px;
+}
