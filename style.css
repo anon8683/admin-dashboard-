@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
   --blue: #1892d5;
-  --white: white;
+  --cardbg: rgb(226, 233, 241);
+  --flare: rgb(227, 176, 48);
+  --text: #656363;
 }
 
 body {
@@ -33,11 +35,7 @@ body {
   display: grid;
   grid-template-columns: 3fr minmax(225px, 1fr);
   grid-template-rows: 50px 1fr;
-}
-
-/* Side bar in main, announcments etc */
-.sidebar {
-  background-color: aquamarine;
+  background-color: var(--cardbg);
 }
 
 /* This is our flex container for cards */
@@ -47,17 +45,141 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: aliceblue;
+  margin-bottom: 40px;
   grid-column: 1/2;
 }
 
-/* Our main article */
+/* Our main article -----------------------------------------------------------*/
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 150px;
-  width: 320px;
+  width: 350px;
+  overflow: auto;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 7px;
+  background: linear-gradient(to right, var(--flare) 2%, white 0%);
+  -webkit-box-shadow: 5px 5px 11px -7px #000000;
+  box-shadow: 5px 5px 12px -7px rgba(0, 0, 0, 0.65);
 }
 
-/* NAV BAR---------------------------- */
+.card-links {
+  align-self: flex-end;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Our icons links on the card */
+.card-icons {
+  width: 20px;
+  margin-left: 20px;
+}
+
+.cardinfo {
+  margin-left: 10px;
+}
+
+.info {
+  font-size: 0.65rem;
+  margin: 5px;
+  margin-top: 0;
+  color: var(--text);
+}
+
+.card-title,
+.bold {
+  margin: 5px;
+  margin-bottom: 3px;
+}
+
+.titles {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.side {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+/* Side bar in main, announcments etc */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  margin-bottom: 40px;
+}
+.sideCard {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  height: 250px;
+  width: 250px;
+
+  -webkit-box-shadow: 5px 5px 11px -7px #000000;
+  box-shadow: 5px 5px 12px -7px rgba(0, 0, 0, 0.65);
+}
+
+.sideCard:last-of-type {
+  display: block;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: #f0ecec 1px solid;
+}
+
+.person:last-of-type {
+  border: none;
+}
+
+.sideInfo {
+  padding: 5px;
+  border-bottom: #f0ecec 1px solid;
+}
+
+.sideInfo:last-of-type {
+  border: none;
+}
+
+.trending {
+  margin: 10px;
+}
+
+.app,
+.handle {
+  margin: 5px;
+  font-size: 0.6rem;
+}
+
+.handle {
+  font-size: 0.7rem;
+}
+
+.app {
+  color: var(--text);
+}
+img.logo {
+  width: 40px;
+  padding: 5px;
+  margin: 6px;
+  margin-left: 15px;
+}
+
+/* NAV BAR--------------------------------- */
 
 nav {
   display: grid;
@@ -77,9 +199,6 @@ h4 {
   color: var(--white);
 }
 
-h4 .titles {
-  color: black;
-}
 img {
   width: 18px;
 }
@@ -87,4 +206,22 @@ img {
 .nav-link,
 h2 {
   margin: 0;
+  color: rgba(255, 255, 255, 0.836);
 }
+
+a,
+a:visited {
+  text-decoration: none;
+  text-decoration-color: rgba(109, 3, 3, 0.836);
+  color: rgba(255, 255, 255, 0.836);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.dash {
+  align-self: center;
+}
+
+/* --------------------------------------------------------------------------- */
